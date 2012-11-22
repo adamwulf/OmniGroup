@@ -245,6 +245,7 @@ static void _checkForCommonClassMethodNameTypos(Class metaClass, Class class, Me
     const char * const affectingPrefix = "keyPathsForValuesAffecting";
 
     for (unsigned int methodIndex = 0; methodIndex < methodCount; methodIndex ++) {
+        if(!methods) continue; // get rid of null pointer compiler warning
         SEL sel = method_getName(methods[methodIndex]);
         const char *selName = sel_getName(sel);
         size_t selNameLength = strlen(selName);

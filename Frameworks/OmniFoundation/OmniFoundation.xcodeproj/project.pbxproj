@@ -647,6 +647,8 @@
 		5F3DCBDB14B78AC8001C56CF /* NSKeyValueObserving-OFExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F3DCBD914B78AC8001C56CF /* NSKeyValueObserving-OFExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FEC029B1456323D002E9BBF /* OFXMLReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 343BA6FC0F740AB100329C2F /* OFXMLReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FEC029D14563462002E9BBF /* OFXMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 343BA6FD0F740AB100329C2F /* OFXMLReader.m */; };
+		669EECAF165D890F001896F4 /* OFReadWriteLock.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E51CFEFE8AAEA611C9CC38 /* OFReadWriteLock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		669EECB0165D8A00001896F4 /* OFReadWriteLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E51CFBFE8AAEA611C9CC38 /* OFReadWriteLock.m */; };
 		6C391FA4114C1B4E0049E917 /* OFNetChangeNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C391FA2114C1B4E0049E917 /* OFNetChangeNotifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C391FA5114C1B4E0049E917 /* OFNetChangeNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C391FA3114C1B4E0049E917 /* OFNetChangeNotifier.m */; };
 		6C4635F90B38956800635C03 /* OFScriptHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C4635F70B38956800635C03 /* OFScriptHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -2479,6 +2481,7 @@
 			files = (
 				5F3DCBDB14B78AC8001C56CF /* NSKeyValueObserving-OFExtensions.h in Headers */,
 				344D08F71190D4ED00264D89 /* CFArray-OFExtensions.h in Headers */,
+				669EECAF165D890F001896F4 /* OFReadWriteLock.h in Headers */,
 				344D08FA1190D4F900264D89 /* CFData-OFFileIO.h in Headers */,
 				344D08FB1190D4FB00264D89 /* CFData-OFCompression.h in Headers */,
 				344D08FF1190D50700264D89 /* CFDictionary-OFExtensions.h in Headers */,
@@ -3154,6 +3157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669EECB0165D8A00001896F4 /* OFReadWriteLock.m in Sources */,
 				344D08F61190D4EC00264D89 /* CFArray-OFExtensions.m in Sources */,
 				344D08F91190D4F800264D89 /* CFData-OFFileIO.m in Sources */,
 				344D08FC1190D4FC00264D89 /* CFData-OFCompression.m in Sources */,
@@ -3686,6 +3690,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 344D08D01190D48A00264D89 /* Touch-Library-Debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = OmniFoundation;
 			};
 			name = Debug;
@@ -3694,6 +3700,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 344D08D11190D48A00264D89 /* Touch-Library-Release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = OmniFoundation;
 			};
 			name = Release;
@@ -3702,6 +3710,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 344D08CF1190D48A00264D89 /* Touch-Library-Coverage.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"ARCHS[sdk=iphoneos*]" = "$(ARCHS_STANDARD_32_BIT)";
 				PRODUCT_NAME = OmniFoundation;
 			};
 			name = Coverage;

@@ -5,10 +5,13 @@
 // distributed with this project and can also be found at
 // <http://www.omnigroup.com/developer/sourcecode/sourcelicense/>.
 
+#import <Foundation/Foundation.h>
 #import <OmniFoundation/OFStringDecoder.h>
 #import <OmniFoundation/CFString-OFExtensions.h>
 #import <CoreFoundation/CFCharacterSet.h>
-
+#import <OmniBase/rcsid.h>
+#import <OmniBase/assertions.h>
+#import <OmniBase/OBUtilities.h>
 #include <pthread.h>
 
 RCS_ID("$Id$")
@@ -436,6 +439,7 @@ extern NSString *OFMostlyApplyDeferredEncoding(NSString *str, CFStringEncoding n
         return str;
     
     NSUInteger inputStringLength = [str length];
+    if(inputStringLength == 0) return str;
     CFDataRef octets = OFCreateDataFromStringWithDeferredEncoding((CFStringRef)str, CFRangeMake(0, inputStringLength), newEncoding, 0);
     if (!octets)
         return str;
